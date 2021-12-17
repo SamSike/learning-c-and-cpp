@@ -1,0 +1,90 @@
+#include<iostream.h>
+#include<conio.h>
+#include<fstream.h>
+#include<stdio.h>
+
+class Book
+{
+	long BNo;
+	char Title[100],Author[100];
+     public:
+	void Get()
+	{
+		cout<<"Enter Book Number : ";
+		cin>>BNo;
+		cout<<"Enter Book Title : ";
+		gets(Title);
+		cout<<"Enter Author Name : ";
+		gets(Author);
+	}
+	void Show()
+	{
+		cout<<"\n\tBook Number : "<<BNo;
+		cout<<"\n\tBook Title  : "<<Title;
+		cout<<"\n\tAuthor Name : "<<Author;
+	}
+	long RBNo(){return BNo;}
+};
+void Add()
+{
+	ofstream F("LIBRARY.DAT",ios::binary|ios::app);
+	F.close();
+}
+void Delete(long temp)
+{
+	ifstream F("LIBRARY.DAT",ios::binary|ios::in);
+	ofstream G("TEMP.DAT",ios::binary|ios::out);
+	G.close();
+	F.close();
+}
+void Modify(long temp)
+{
+	fstream F("LIBRARY.DAT",ios::binary|ios::in|ios::out);
+	F.close();
+}
+void Search(long temp)
+{
+	ifstream F("LIBRARY.DAT",ios::binary|ios::in);
+	F.close();
+}
+void Display()
+{
+	ifstream F("LIBRARY.DAT",ios::binary|ios::in);
+	F.close();
+}
+
+void main(){
+	int ch;
+	long temp;
+	char ch1;
+do{
+	clrscr();
+	cout<<"Enter Number corresponding to choice\n";
+	cout<<"1.Add\n2.Display\n3.Modify\n4.Search\n5.Delete\n";
+	cin>>ch;
+	switch(ch){
+		case 1:
+			Add();
+			break;
+		case 2:
+			Display();
+			break;
+		default:
+			cout<<"Enter Book Number : ";
+			cin>>temp;
+	}
+	switch(ch){
+		case 3:
+			Modify(temp);
+			break;
+		case 4:
+			Search(temp);
+			break;
+		case 5:
+			Delete(temp);
+			break;
+	}
+	cout<<"Do you want to continue? y/n : ";
+	cin>>ch1;
+}while(ch1=='y'||ch1=='Y');
+}

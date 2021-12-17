@@ -1,0 +1,4 @@
+Name : Sameer	Salary : 250000
+Name : Kajal	Salary : 100
+
+Sum = 250100	Average = 125050

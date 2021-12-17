@@ -1,0 +1,5 @@
+New Century Compfile handling??
+what are your difficulties with file handling
+i havent used it in a long time so i forgot the code
+so should i start it from beginning??
+no need

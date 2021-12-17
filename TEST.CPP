@@ -1,0 +1,24 @@
+#include<iostream.h>
+#include<conio.h>
+#include<string.h>
+#include<ctype.h>
+void main()
+{
+char *NAME = "a ProFiLe";
+
+for(int x=0; x<strlen(NAME); x++)
+{
+if(islower(NAME[x]))
+
+NAME[x] = toupper(NAME[x]);
+
+if(x%2 != 0)
+
+NAME[x] = tolower(NAME[x-1]);
+
+else
+
+NAME[x]--;
+}
+cout<<NAME<<endl;
+}
